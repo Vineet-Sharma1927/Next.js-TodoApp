@@ -24,3 +24,42 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* TipTap Editor Styles */
+.ProseMirror p {
+  margin: 0.5em 0;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  padding-left: 1.5em;
+}
+
+.ProseMirror ul li {
+  list-style-type: disc;
+}
+
+.ProseMirror ol li {
+  list-style-type: decimal;
+}
+
+.ProseMirror mark {
+  background-color: transparent;
+}
+
+/* Make sure the editor content is visible in both light and dark modes */
+.rich-text-editor .ProseMirror {
+  min-height: 100px;
+  outline: none;
+}
+
+/* Ensure text colors are visible */
+.rich-text-editor [style*="color"] {
+  color: inherit;
+}
+
+/* Override Tailwind's prose styles for the editor */
+.prose .ProseMirror ul > li::before,
+.prose .ProseMirror ol > li::before {
+  display: none;
+}

@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Todo App
+
+A full-stack Todo application built with Next.js, Express, MongoDB, and Tailwind CSS.
+
+## Features
+
+- Create, read, update, and delete todos
+- Rich text editor for todo descriptions
+- Responsive design with Tailwind CSS
+- Server-side rendering with Next.js
+- RESTful API with Express
+- MongoDB database for data persistence
+
+## Prerequisites
+
+- Node.js (v18 or higher)
+- MongoDB (local or Atlas)
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Set up environment variables:
+   - Create a `.env` file in the root directory with the following variables:
+   ```
+   PORT=5000
+   MONGODB_URI=mongodb://localhost:27017/todo-app
+   NEXT_PUBLIC_API_URL=http://localhost:5000/api
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+4. Start the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Run both Next.js and Express servers concurrently
+npm run dev:all
 
-## Learn More
+# Or run them separately
+npm run dev        # Next.js frontend
+npm run dev:server # Express backend
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/app` - Next.js frontend
+  - `/components` - React components
+  - `/utils` - Utility functions
+- `/server` - Express backend
+  - `/models` - MongoDB models
+  - `/routes` - API routes
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Build the Next.js application:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+2. Start the production server:
+
+```bash
+npm start
+```
+
+## License
+
+MIT
