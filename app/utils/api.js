@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://next-js-todo-app-drab.vercel.app/';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://next-js-todo-app-nine.vercel.app/api';
 
 export const fetchTodos = async (page = 1, limit = 8) => {
   try {
